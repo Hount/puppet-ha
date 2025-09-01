@@ -32,13 +32,13 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /app
 
 # Copy package.json and package-lock.json first
-COPY ha-puppet/package*.json ./
+COPY ha-puppet-addon/package*.json ./
 
 # Ensure a clean state before installing
 RUN npm ci --unsafe-perm
 
 # Copy the rest of the project files
-COPY ha-puppet/ .
+COPY ha-puppet-addon/ .
 
 # Set Puppeteer to use Alpine Chromium
 # ENV PUPPETEER_EXECUTABLE_PATH="/usr/bin/chromium"
