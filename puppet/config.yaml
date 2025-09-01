@@ -12,6 +12,7 @@ ports:
 options:
   access_token: ""
   keep_browser_open: false
+  homeassistant_url: https://testtesthah:443
 schema:
   access_token: str
   keep_browser_open: bool
