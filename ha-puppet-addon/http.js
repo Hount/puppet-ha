@@ -1,6 +1,6 @@
 import http from "node:http";
 import { Browser } from "./screenshot.js";
-import { isAddOn, hassUrl, hassToken, keepBrowserOpen } from "./const.js";
+import { hassUrl, hassToken, keepBrowserOpen } from "./const.js";
 import { CannotOpenPageError } from "./error.js";
 
 // Maximum number of next requests to keep in memory
@@ -266,9 +266,7 @@ const server = http.createServer((request, response) =>
 );
 server.listen(port);
 const now = new Date();
-const serverUrl = isAddOn
-  ? `http://homeassistant.local:${port}`
-  : `http://localhost:${port}`;
+const serverUrl =`http://${hassUrl}:${port}`;
 console.log(
   `[${now.toLocaleTimeString()}] Visit server at ${serverUrl}/lovelace/0?viewport=1000x1000`,
 );

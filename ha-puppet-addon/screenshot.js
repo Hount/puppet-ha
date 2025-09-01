@@ -399,6 +399,23 @@ export class Browser {
 
       let sharpInstance = sharp(image);
 
+      // Crop tile if requested
+      if (tile !== undefined && tile >= 0 && tile <= 3) {
+        const halfWidth = Math.floor(viewport.width / 2);
+        const halfHeight = Math.floor(viewport.height / 2);
+
+        const cropX = (tile % 2) * halfWidth;
+        const cropY = Math.floor(tile / 2) * halfHeight;
+
+        sharpInstance = sharpInstance.extract({
+          left: cropX,
+          top: cropY,
+          width: halfWidth,
+          height: halfHeight,
+        });
+      }
+
+
       if (rotate) {
         sharpInstance = sharpInstance.rotate(rotate);
       }
