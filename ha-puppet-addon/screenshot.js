@@ -371,7 +371,7 @@ export class Browser {
     }
   }
 
-  async screenshotPage({ viewport, einkColors, invert, zoom, format, rotate }) {
+  async screenshotPage({ viewport, einkColors, invert, zoom, format, rotate, tile }) {
     let start = new Date();
     if (this.busy) {
       throw new Error("Browser is busy");
