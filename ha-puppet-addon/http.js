@@ -108,6 +108,11 @@ class RequestHandler {
         einkColors = undefined;
       }
 
+      let tile = parseInt(requestUrl.searchParams.get("tile"));
+      if (isNaN(tile) || tile < 0 || tile > 3) {
+        tile = undefined; // ignore invalid tiles
+      }
+
       let zoom = parseFloat(requestUrl.searchParams.get("zoom"));
       if (isNaN(zoom) || zoom <= 0) {
         zoom = 1;
@@ -141,6 +146,7 @@ class RequestHandler {
         lang,
         theme,
         dark,
+        tile,
       };
 
       // Extract next param and schedule if necessary
