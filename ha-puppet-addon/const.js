@@ -15,8 +15,8 @@ const options = JSON.parse(readFileSync(optionsFile));
 
 export const hassSSL = options.home_assistant_ssl;
 export const hassUrl = hassSSL
- ? `https://${hassUrl}`
-  : `http://${hassUrl}`;
+ ? `https://${options.home_assistant_url}`
+  : `http://${options.home_assistant_url}`;
 export const hassToken = options.access_token;
 export const debug = false;
 
