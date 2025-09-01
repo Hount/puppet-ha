@@ -12,7 +12,6 @@ You will need to create a long lived access token and add it as an add-on option
 
 _This is a prototype, there is NO security. Anyone can access the server and make screenshots of any Home Assistant page._
 
-[![ESPHome device showing a screenshot of a Home Assistant dashboard](https://raw.githubusercontent.com/balloob/home-assistant-addons/main/puppet/example/screenshot.jpg)](./example/)
 
 ## Usage
 
