@@ -13,7 +13,7 @@ if (!optionsFile) {
 export const isAddOn = optionsFile === "/data/options.json";
 const options = JSON.parse(readFileSync(optionsFile));
 
-export const hassUrl = "https://homeassistant;
+export const hassUrl = "https://homeassistant";
 export const hassToken = options.access_token;
 export const debug = false;
 
