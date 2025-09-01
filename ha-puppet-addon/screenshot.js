@@ -401,8 +401,12 @@ export class Browser {
 
       // Crop tile if requested
       if (tile !== undefined && tile >= 0 && tile <= 3) {
-        const halfWidth = Math.floor(viewport.width / 2);
-        const halfHeight = Math.floor(viewport.height / 2);
+        const metadata = await sharpInstance.metadata();
+        const imgWidth = metadata.width;
+        const imgHeight = metadata.height;
+
+        const halfWidth = Math.floor(imgWidth / 2);
+        const halfHeight = Math.floor(imgHeight / 2);
 
         const cropX = (tile % 2) * halfWidth;
         const cropY = Math.floor(tile / 2) * halfHeight;
@@ -414,7 +418,6 @@ export class Browser {
           height: halfHeight,
         });
       }
-
 
       if (rotate) {
         sharpInstance = sharpInstance.rotate(rotate);
