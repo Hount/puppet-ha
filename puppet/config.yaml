@@ -16,3 +16,4 @@ options:
 schema:
   access_token: str
   keep_browser_open: bool
+  homeassistant_url: str
